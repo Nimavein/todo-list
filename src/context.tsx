@@ -31,8 +31,25 @@ const AppProvider: React.FC = ({ children }) => {
     };
     setTodos([...todos, newTodo]);
   };
+
+  const updateTodo = (id: number) => {
+    todos.filter((todo: ITodo) => {
+      if (todo.id === id) {
+        todo.status = true;
+        setTodos([...todos]);
+      }
+    });
+  };
+
+  const deleteTodo = (id: number) => {
+    const newTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(newTodos);
+  };
+
   return (
-    <AppContext.Provider value={{ todos, categories, createTodo }}>
+    <AppContext.Provider
+      value={{ todos, categories, createTodo, updateTodo, deleteTodo }}
+    >
       {children}
     </AppContext.Provider>
   );

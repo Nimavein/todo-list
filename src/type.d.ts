@@ -12,8 +12,8 @@ type ContextType = {
   todos: ITodo[];
   categories: Category[];
   createTodo: (todo: ITodo) => void;
-  //updateTodo: (id: number) => void;
-  //deleteTodo: (id: number) => void;
+  updateTodo: (id: number) => void;
+  deleteTodo: (id: number) => void;
 };
 
 interface Category {
