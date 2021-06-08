@@ -10,11 +10,9 @@ const TodosContainer: React.FC = () => {
   const handleFormVisibility = () => {
     if (isFormOpen === false) {
       setIsFormOpen(true);
-      alert("XD");
     }
     if (isFormOpen === true) {
       setIsFormOpen(false);
-      alert("nope");
     }
   };
 
