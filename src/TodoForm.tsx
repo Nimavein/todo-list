@@ -5,7 +5,7 @@ const TodoForm: React.FC = () => {
   const { createTodo, todos } = useGlobalContext();
   const [formData, setFormData] = React.useState<ITodo | {}>();
 
-  const handleForm = (e: React.FormEvent<HTMLInputElement>): void => {
+  const handleForm = (e: React.FormEvent<HTMLInputElement> | any): void => {
     setFormData({
       ...formData,
       [e.currentTarget.id]: e.currentTarget.value,
@@ -18,18 +18,27 @@ const TodoForm: React.FC = () => {
   };
   return (
     <div>
-      <form onSubmit={(e) => handleCreateTodo(e, formData)}>
+      <form
+        className="todo-form"
+        onSubmit={(e) => handleCreateTodo(e, formData)}
+      >
         <label>
           Title:
-          <input onChange={handleForm} type="text" id="title" />
+          <input onChange={handleForm} required type="text" id="title" />
         </label>
         <label>
           Description:
-          <input onChange={handleForm} type="text" id="description" />
+          <input onChange={handleForm} required type="text" id="description" />
         </label>
-        <button disabled={formData === undefined ? true : false}>
-          Add Todo
-        </button>
+        <label>
+          Priority:
+          <select onChange={handleForm} required id="priority">
+            <option value="low">low</option>
+            <option value="medium">medium</option>
+            <option value="high">high</option>
+          </select>
+        </label>
+        <button>Add Todo</button>
       </form>
     </div>
   );
