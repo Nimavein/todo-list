@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useGlobalContext } from "./context";
 import Todo from "./Todo";
+import TodoForm from "./TodoForm";
 
 const TodosContainer: React.FC = () => {
   const { todos } = useGlobalContext();
 
   return (
     <div className="todos-container">
+      <TodoForm />
       {todos.map((todo: ITodo) => {
         return <Todo key={todo.id} {...todo} />;
       })}

@@ -3,7 +3,6 @@ interface ITodo {
   title: string;
   status: boolean;
   priority: "low" | "medium" | "high";
-
   category: Category;
   description: string;
 }
