@@ -24,6 +24,11 @@
   width: 40%;
 }
 
+.todo-done {
+  color: #7e7e7e;
+  text-decoration: line-through;
+}
+
 body {
   padding: 0;
   margin: 0;

@@ -3,12 +3,7 @@ import React, { useContext, useState } from "react";
 const AppContext = React.createContext<ContextType>({} as ContextType);
 
 const AppProvider: React.FC = ({ children }) => {
-  const [categories, setCategories] = useState<Category[]>([
-    {
-      id: 1,
-      name: "first category",
-    },
-  ]);
+  const [categories, setCategories] = useState<Category[]>([]);
   const [todos, setTodos] = useState<ITodo[]>([
     {
       id: 1,
@@ -16,9 +11,26 @@ const AppProvider: React.FC = ({ children }) => {
       description: "this is my first description",
       status: false,
       priority: "low",
-      category: categories[0],
     },
   ]);
+
+  //const setNewCategories = () => {
+  //  const allCategories = ["all", new Set(todos.map((todo) => todo.category))];
+  //  setCategories(allCategories);
+  //};
+
+  const createCategory = (category: Category) => {
+    const newCategory: Category = {
+      id: Math.random(),
+      name: category.name,
+    };
+    setCategories([...categories, newCategory]);
+  };
+
+  const deleteCategory = (id: number) => {
+    const newCategories = categories.filter((category) => category.id !== id);
+    setCategories(newCategories);
+  };
 
   const createTodo = (todo: ITodo) => {
     const newTodo: ITodo = {
@@ -35,8 +47,13 @@ const AppProvider: React.FC = ({ children }) => {
   const updateTodo = (id: number) => {
     todos.filter((todo: ITodo) => {
       if (todo.id === id) {
-        todo.status = true;
-        setTodos([...todos]);
+        if (todo.status === false) {
+          todo.status = true;
+          setTodos([...todos]);
+        } else {
+          todo.status = false;
+          setTodos([...todos]);
+        }
       }
     });
   };
@@ -48,7 +65,15 @@ const AppProvider: React.FC = ({ children }) => {
 
   return (
     <AppContext.Provider
-      value={{ todos, categories, createTodo, updateTodo, deleteTodo }}
+      value={{
+        todos,
+        categories,
+        createCategory,
+        deleteCategory,
+        createTodo,
+        updateTodo,
+        deleteTodo,
+      }}
     >
       {children}
     </AppContext.Provider>
