@@ -56,7 +56,6 @@ const AppProvider: React.FC = ({ children }) => {
   const editTodo = (id: number, editedTodo: ITodo) => {
     todos.filter((todo: ITodo) => {
       if (todo.id === id) {
-        alert("edit works");
         todo.id = id;
         todo.title = editedTodo.title;
         todo.description = editedTodo.description;

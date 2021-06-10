@@ -4,9 +4,13 @@ import { useGlobalContext } from "./context";
 
 type TodosEditFormProps = {
   id: number;
+  handleEditVisibility: any;
 };
 
-const TodoEditForm: React.FC<TodosEditFormProps> = ({ id }) => {
+const TodoEditForm: React.FC<TodosEditFormProps> = ({
+  id,
+  handleEditVisibility,
+}) => {
   const { editTodo, todos } = useGlobalContext();
   const [formData, setFormData] = React.useState<ITodo | {}>();
 
@@ -21,8 +25,7 @@ const TodoEditForm: React.FC<TodosEditFormProps> = ({ id }) => {
   const handleEditTodo = (e: React.FormEvent, formData: ITodo | any) => {
     e.preventDefault();
     editTodo(id, formData);
-
-    console.log(todos);
+    handleEditVisibility();
   };
   return (
     <div>

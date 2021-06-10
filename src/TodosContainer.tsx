@@ -32,7 +32,11 @@ const TodosContainer: React.FC<TodosContainerProps> = ({
         </button>
       </div>
       {isFormOpen === true && (
-        <TodoForm categoryName={categoryName} categoryID={categoryID} />
+        <TodoForm
+          categoryName={categoryName}
+          categoryID={categoryID}
+          handleFormVisibility={handleFormVisibility}
+        />
       )}
 
       {todos.map((todo: ITodo) => {

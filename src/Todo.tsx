@@ -21,7 +21,7 @@ const Todo: React.FC<ITodoProps> = ({
 }) => {
   const [isEditOpen, setIsEditOpen] = useState(false);
 
-  const handleCategoryVisibility = () => {
+  const handleEditVisibility = () => {
     if (isEditOpen === false) {
       setIsEditOpen(true);
     }
@@ -37,8 +37,12 @@ const Todo: React.FC<ITodoProps> = ({
       <h3>{priority}</h3>
       <button onClick={(e) => updateTodo(id)}>change status</button>
       <button onClick={(e) => deleteTodo(id)}>delete</button>
-      <button onClick={(e) => handleCategoryVisibility()}>edit</button>
-      {isEditOpen === false ? "" : <TodoEditForm id={id} />}
+      <button onClick={(e) => handleEditVisibility()}>edit</button>
+      {isEditOpen === false ? (
+        ""
+      ) : (
+        <TodoEditForm id={id} handleEditVisibility={handleEditVisibility} />
+      )}
     </div>
   );
 };

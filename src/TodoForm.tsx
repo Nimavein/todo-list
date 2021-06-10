@@ -5,9 +5,13 @@ import { useGlobalContext } from "./context";
 type TodosFormProps = {
   categoryName: string;
   categoryID: number;
+  handleFormVisibility: any;
 };
 
-const TodoForm: React.FC<TodosFormProps> = ({ categoryName, categoryID }) => {
+const TodoForm: React.FC<TodosFormProps> = ({
+  categoryName,
+  handleFormVisibility,
+}) => {
   const { createTodo, todos } = useGlobalContext();
   const [formData, setFormData] = React.useState<ITodo | {}>();
 
@@ -25,6 +29,7 @@ const TodoForm: React.FC<TodosFormProps> = ({ categoryName, categoryID }) => {
     //Passing category name to new Todo
     //newTodo.category: categoryName;
     createTodo(formData);
+    handleFormVisibility();
   };
   return (
     <div>
