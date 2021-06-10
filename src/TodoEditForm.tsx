@@ -2,36 +2,31 @@ import { type } from "os";
 import React, { useState, useEffect } from "react";
 import { useGlobalContext } from "./context";
 
-type TodosFormProps = {
-  categoryName: string;
-  categoryID: number;
+type TodosEditFormProps = {
+  id: number;
 };
 
-const TodoForm: React.FC<TodosFormProps> = ({ categoryName, categoryID }) => {
-  const { createTodo, todos } = useGlobalContext();
+const TodoEditForm: React.FC<TodosEditFormProps> = ({ id }) => {
+  const { editTodo, todos } = useGlobalContext();
   const [formData, setFormData] = React.useState<ITodo | {}>();
 
   const handleForm = (e: React.FormEvent<HTMLInputElement> | any): void => {
     setFormData({
-      category: categoryName,
-      priority: "low",
       ...formData,
       [e.currentTarget.id]: e.currentTarget.value,
     });
+    console.log(todos);
   };
 
-  const handleCreateTodo = (e: React.FormEvent, formData: ITodo | any) => {
+  const handleEditTodo = (e: React.FormEvent, formData: ITodo | any) => {
     e.preventDefault();
-    //Passing category name to new Todo
-    //newTodo.category: categoryName;
-    createTodo(formData);
+    editTodo(id, formData);
+
+    console.log(todos);
   };
   return (
     <div>
-      <form
-        className="todo-form"
-        onSubmit={(e) => handleCreateTodo(e, formData)}
-      >
+      <form className="todo-form" onSubmit={(e) => handleEditTodo(e, formData)}>
         <label>
           Title:
           <input onChange={handleForm} required type="text" id="title" />
@@ -48,10 +43,10 @@ const TodoForm: React.FC<TodosFormProps> = ({ categoryName, categoryID }) => {
             <option value="high">high</option>
           </select>
         </label>
-        <button>Add Todo</button>
+        <button>Edit Todo</button>
       </form>
     </div>
   );
 };
 
-export default TodoForm;
+export default TodoEditForm;

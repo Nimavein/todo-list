@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useGlobalContext } from "./context";
+import TodoEditForm from "./TodoEditForm";
 
 type ITodoProps = {
   id: number;
@@ -18,7 +19,17 @@ const Todo: React.FC<ITodoProps> = ({
   status,
   categoryName,
 }) => {
-  const { deleteTodo, updateTodo } = useGlobalContext();
+  const [isEditOpen, setIsEditOpen] = useState(false);
+
+  const handleCategoryVisibility = () => {
+    if (isEditOpen === false) {
+      setIsEditOpen(true);
+    }
+    if (isEditOpen === true) {
+      setIsEditOpen(false);
+    }
+  };
+  const { deleteTodo, updateTodo, editTodo } = useGlobalContext();
   return (
     <div className={status === false ? "todo-active" : "todo-done"}>
       <h1>{title}</h1>
@@ -26,6 +37,8 @@ const Todo: React.FC<ITodoProps> = ({
       <h3>{priority}</h3>
       <button onClick={(e) => updateTodo(id)}>change status</button>
       <button onClick={(e) => deleteTodo(id)}>delete</button>
+      <button onClick={(e) => handleCategoryVisibility()}>edit</button>
+      {isEditOpen === false ? "" : <TodoEditForm id={id} />}
     </div>
   );
 };

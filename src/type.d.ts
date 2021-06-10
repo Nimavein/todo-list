@@ -13,6 +13,7 @@ type ContextType = {
   createCategory: (todo: Category) => void;
   deleteCategory: (id: number) => void;
   createTodo: (todo: ITodo) => void;
+  editTodo: (id: number, editedTodo: ITodo) => void;
   updateTodo: (id: number) => void;
   deleteTodo: (id: number) => void;
 };

@@ -30,7 +30,7 @@ const AppProvider: React.FC = ({ children }) => {
       name: category.name,
     };
     if (categories.some((e) => e.name === newCategory.name)) {
-      console.log("exist");
+      alert("category already exists");
     } else {
       setCategories([...categories, newCategory]);
     }
@@ -51,6 +51,21 @@ const AppProvider: React.FC = ({ children }) => {
       category: todo.category,
     };
     setTodos([...todos, newTodo]);
+  };
+
+  const editTodo = (id: number, editedTodo: ITodo) => {
+    todos.filter((todo: ITodo) => {
+      if (todo.id === id) {
+        alert("edit works");
+        todo.id = id;
+        todo.title = editedTodo.title;
+        todo.description = editedTodo.description;
+        todo.status = false;
+        todo.priority = editedTodo.priority;
+        todo.category = todo.category;
+        setTodos([...todos]);
+      }
+    });
   };
 
   const updateTodo = (id: number) => {
@@ -80,6 +95,7 @@ const AppProvider: React.FC = ({ children }) => {
         createCategory,
         deleteCategory,
         createTodo,
+        editTodo,
         updateTodo,
         deleteTodo,
       }}
