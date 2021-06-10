@@ -9,6 +9,16 @@ type CategoryProps = {
 
 const Category: React.FC<CategoryProps> = ({ name, id }) => {
   const { deleteCategory } = useGlobalContext();
+  const [isCategoryOpen, setIsCategoryOpen] = useState(false);
+
+  const handleCategoryVisibility = () => {
+    if (isCategoryOpen === false) {
+      setIsCategoryOpen(true);
+    }
+    if (isCategoryOpen === true) {
+      setIsCategoryOpen(false);
+    }
+  };
 
   return (
     <div>
@@ -20,8 +30,17 @@ const Category: React.FC<CategoryProps> = ({ name, id }) => {
         >
           delete
         </button>
+        <button
+          onClick={() => handleCategoryVisibility()}
+          className="show-more-button"
+        >
+          {isCategoryOpen === false ? "more" : "less"}
+        </button>
       </div>
-      <TodosContainer categoryName={name} categoryID={id} />
+
+      {isCategoryOpen === true && (
+        <TodosContainer categoryName={name} categoryID={id} />
+      )}
     </div>
   );
 };

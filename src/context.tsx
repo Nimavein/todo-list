@@ -11,11 +11,11 @@ const AppProvider: React.FC = ({ children }) => {
   const [todos, setTodos] = useState<ITodo[]>([
     {
       id: 1,
-      title: "post 1",
-      description: "this is my first description",
-      status: false,
+      title: "todo1",
+      status: true,
       priority: "low",
-      category: categories[0],
+      category: "work",
+      description: "lfnsknfl",
     },
   ]);
 

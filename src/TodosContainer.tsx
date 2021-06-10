@@ -37,7 +37,10 @@ const TodosContainer: React.FC<TodosContainerProps> = ({
       )}
 
       {todos.map((todo: ITodo) => {
-        return <Todo key={todo.id} {...todo} />;
+        console.log(todos);
+        if (categoryName === todo.category) {
+          return <Todo key={todo.id} {...todo} categoryName={categoryName} />;
+        }
       })}
     </div>
   );

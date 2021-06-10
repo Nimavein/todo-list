@@ -7,6 +7,7 @@ type ITodoProps = {
   description: string;
   priority: "low" | "medium" | "high";
   status: boolean;
+  categoryName: string;
 };
 
 const Todo: React.FC<ITodoProps> = ({
@@ -15,6 +16,7 @@ const Todo: React.FC<ITodoProps> = ({
   description,
   priority,
   status,
+  categoryName,
 }) => {
   const { deleteTodo, updateTodo } = useGlobalContext();
   return (
@@ -22,6 +24,7 @@ const Todo: React.FC<ITodoProps> = ({
       <h1>{title}</h1>
       <h3>{description}</h3>
       <h3>{priority}</h3>
+      <h3>category: {categoryName}</h3>
       <button onClick={(e) => updateTodo(id)}>change status</button>
       <button onClick={(e) => deleteTodo(id)}>delete</button>
     </div>

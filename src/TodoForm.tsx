@@ -13,6 +13,8 @@ const TodoForm: React.FC<TodosFormProps> = ({ categoryName, categoryID }) => {
 
   const handleForm = (e: React.FormEvent<HTMLInputElement> | any): void => {
     setFormData({
+      category: categoryName,
+      priority: "low",
       ...formData,
       [e.currentTarget.id]: e.currentTarget.value,
     });
@@ -20,6 +22,8 @@ const TodoForm: React.FC<TodosFormProps> = ({ categoryName, categoryID }) => {
 
   const handleCreateTodo = (e: React.FormEvent, formData: ITodo | any) => {
     e.preventDefault();
+    //Passing category name to new Todo
+    //newTodo.category: categoryName;
     createTodo(formData);
   };
   return (
@@ -39,7 +43,9 @@ const TodoForm: React.FC<TodosFormProps> = ({ categoryName, categoryID }) => {
         <label>
           Priority:
           <select onChange={handleForm} required id="priority">
-            <option value="low">low</option>
+            <option value="low" selected>
+              low
+            </option>
             <option value="medium">medium</option>
             <option value="high">high</option>
           </select>
