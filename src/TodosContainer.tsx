@@ -26,7 +26,6 @@ const TodosContainer: React.FC<TodosContainerProps> = ({
 
   return (
     <div className="todos-container">
-      {categoryName}
       <div>
         <button onClick={() => handleFormVisibility()}>
           {isFormOpen === false ? "Add task" : "X"}{" "}

@@ -29,7 +29,11 @@ const AppProvider: React.FC = ({ children }) => {
       id: Math.random(),
       name: category.name,
     };
-    setCategories([...categories, newCategory]);
+    if (categories.some((e) => e.name === newCategory.name)) {
+      console.log("exist");
+    } else {
+      setCategories([...categories, newCategory]);
+    }
   };
 
   const deleteCategory = (id: number) => {

@@ -24,18 +24,20 @@ const Category: React.FC<CategoryProps> = ({ name, id }) => {
     <div>
       <div className="category-title-container">
         <h1>{name}</h1>
-        <button
-          className="category-delete-button"
-          onClick={(e) => deleteCategory(id)}
-        >
-          delete
-        </button>
-        <button
-          onClick={() => handleCategoryVisibility()}
-          className="show-more-button"
-        >
-          {isCategoryOpen === false ? "more" : "less"}
-        </button>
+        <div>
+          <button
+            className="category-delete-button"
+            onClick={(e) => deleteCategory(id)}
+          >
+            delete
+          </button>
+          <button
+            onClick={() => handleCategoryVisibility()}
+            className="show-more-button"
+          >
+            {isCategoryOpen === false ? "more" : "less"}
+          </button>
+        </div>
       </div>
 
       {isCategoryOpen === true && (
