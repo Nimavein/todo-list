@@ -15,6 +15,7 @@ const AppProvider: React.FC = ({ children }) => {
       description: "this is my first description",
       status: false,
       priority: "low",
+      category: categories[0],
     },
   ]);
 

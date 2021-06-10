@@ -10,7 +10,7 @@
 
 .todos-container {
   padding-top: 5vh;
-  padding-left: 30vw;
+  padding-bottom: 5vh;
 }
 
 .todo-form {
@@ -32,12 +32,16 @@
 .categories-container {
   padding-top: 20vh;
   padding-left: 30vw;
+  width: 50%;
 }
 
 .category-title-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 body {

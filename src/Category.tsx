@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useGlobalContext } from "./context";
+import TodosContainer from "./TodosContainer";
 
 type CategoryProps = {
   id: number;
@@ -8,6 +9,7 @@ type CategoryProps = {
 
 const Category: React.FC<CategoryProps> = ({ name, id }) => {
   const { deleteCategory } = useGlobalContext();
+
   return (
     <div>
       <div className="category-title-container">
@@ -19,6 +21,7 @@ const Category: React.FC<CategoryProps> = ({ name, id }) => {
           delete
         </button>
       </div>
+      <TodosContainer categoryName={name} categoryID={id} />
     </div>
   );
 };

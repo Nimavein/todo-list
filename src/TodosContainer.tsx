@@ -3,7 +3,15 @@ import { useGlobalContext } from "./context";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 
-const TodosContainer: React.FC = () => {
+type TodosContainerProps = {
+  categoryName: string;
+  categoryID: number;
+};
+
+const TodosContainer: React.FC<TodosContainerProps> = ({
+  categoryName,
+  categoryID,
+}) => {
   const { todos } = useGlobalContext();
   const [isFormOpen, setIsFormOpen] = useState(false);
 
@@ -18,12 +26,15 @@ const TodosContainer: React.FC = () => {
 
   return (
     <div className="todos-container">
+      {categoryName}
       <div>
         <button onClick={() => handleFormVisibility()}>
           {isFormOpen === false ? "Add task" : "X"}{" "}
         </button>
       </div>
-      {isFormOpen === true && <TodoForm />}
+      {isFormOpen === true && (
+        <TodoForm categoryName={categoryName} categoryID={categoryID} />
+      )}
 
       {todos.map((todo: ITodo) => {
         return <Todo key={todo.id} {...todo} />;
