@@ -9,7 +9,7 @@
 }
 
 .todos-container {
-  padding-top: 20vh;
+  padding-top: 5vh;
   padding-left: 30vw;
 }
 
@@ -27,6 +27,17 @@
 .todo-done {
   color: #7e7e7e;
   text-decoration: line-through;
+}
+
+.categories-container {
+  padding-top: 20vh;
+  padding-left: 30vw;
+}
+
+.category-title-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 body {

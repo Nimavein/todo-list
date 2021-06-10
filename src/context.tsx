@@ -3,7 +3,11 @@ import React, { useContext, useState } from "react";
 const AppContext = React.createContext<ContextType>({} as ContextType);
 
 const AppProvider: React.FC = ({ children }) => {
-  const [categories, setCategories] = useState<Category[]>([]);
+  const [categories, setCategories] = useState<Category[]>([
+    { id: 1, name: "home" },
+    { id: 2, name: "work" },
+    { id: 3, name: "meetings" },
+  ]);
   const [todos, setTodos] = useState<ITodo[]>([
     {
       id: 1,
