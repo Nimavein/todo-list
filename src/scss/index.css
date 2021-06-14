@@ -52,7 +52,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: rgba(0, 0, 0, 0.566667);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .todo-form {
@@ -113,7 +113,7 @@
 
 .todo-form .todo-form-buttons {
   margin-top: auto;
-  height: 20%;
+  height: 15%;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -139,11 +139,89 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: white;
+  border-radius: 20px;
+  width: 90%;
+  margin-left: auto;
+  margin-bottom: 20px;
+  height: 50px;
 }
 
-.todo-buttons {
+.todo .todo-buttons {
   margin-left: auto;
+  padding-right: 10px;
+  width: 80px;
+}
+
+.todo .todo-title {
+  margin: 0 10px 0 10px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.todo .todo-description {
+  margin-left: 10px;
+  max-width: 50%;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+.todo .priority-low,
+.todo .priority-medium,
+.todo .priority-high,
+.todo .disabled {
+  width: 20px;
+  height: 100%;
+}
+
+.todo .priority-low {
+  background-color: yellowgreen;
+}
+
+.todo .priority-medium {
+  background-color: #dbdd46;
+}
+
+.todo .priority-high {
+  background-color: #be1c1c;
+}
+
+.todo .disabled {
+  background-color: #d6d6d6;
+}
+
+.todo .delete-todo-button,
+.todo .edit-todo-button,
+.todo .change-todo-status-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.todo .change-todo-status-button {
+  position: relative;
+  margin-left: 8px;
+}
+
+.todo .change-todo-status-button::before {
+  content: "";
+  top: -3px;
+  left: 3px;
+  position: absolute;
+  border: solid 2px;
+  width: 30px;
+  height: 30px;
+}
+
+.todo .placeholder {
+  height: 26px;
+  width: 26.672px;
 }
 
 .todo-done {
@@ -226,7 +304,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: rgba(0, 0, 0, 0.566667);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .category-form-backdrop .category-form {

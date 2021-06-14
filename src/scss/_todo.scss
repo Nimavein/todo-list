@@ -1,10 +1,70 @@
 .todo {
   display: flex;
-  text-align: center;
-}
-
-.todo-buttons {
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 20px;
+  width: 90%;
   margin-left: auto;
+  margin-bottom: 20px;
+  height: 50px;
+  .todo-buttons {
+    margin-left: auto;
+    padding-right: 10px;
+    width: 80px;
+  }
+  .todo-title {
+    margin: 0 10px 0 10px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .todo-description {
+    margin-left: 10px;
+    max-width: 50%;
+    word-wrap: break-word;
+    text-align: left;
+  }
+  .priority-low,
+  .priority-medium,
+  .priority-high,
+  .disabled {
+    width: 20px;
+    height: 100%;
+  }
+  .priority-low {
+    background-color: yellowgreen;
+  }
+  .priority-medium {
+    background-color: rgb(219, 221, 70);
+  }
+  .priority-high {
+    background-color: rgb(190, 28, 28);
+  }
+  .disabled {
+    background-color: $soft-grey;
+  }
+  .delete-todo-button,
+  .edit-todo-button,
+  .change-todo-status-button {
+    @include button-no-background;
+  }
+  .change-todo-status-button {
+    position: relative;
+    margin-left: 8px;
+  }
+  .change-todo-status-button::before {
+    content: "";
+    top: -3px;
+    left: 3px;
+    position: absolute;
+    border: solid 2px;
+    width: 30px;
+    height: 30px;
+  }
+  .placeholder {
+    height: 26px;
+    width: 26.672px;
+  }
 }
 
 .todo-done {
