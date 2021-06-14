@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useGlobalContext } from "./context";
 import TodoEditForm from "./TodoEditForm";
 
@@ -17,7 +17,6 @@ const Todo: React.FC<ITodoProps> = ({
   description,
   priority,
   status,
-  categoryName,
 }) => {
   const [isEditOpen, setIsEditOpen] = useState(false);
 
@@ -29,7 +28,7 @@ const Todo: React.FC<ITodoProps> = ({
       setIsEditOpen(false);
     }
   };
-  const { deleteTodo, updateTodo, editTodo } = useGlobalContext();
+  const { deleteTodo, updateTodo } = useGlobalContext();
   return (
     <div className={status === false ? "todo-active" : "todo-done"}>
       <h1>{title}</h1>

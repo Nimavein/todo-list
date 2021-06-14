@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useGlobalContext } from "./context";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
@@ -40,7 +40,6 @@ const TodosContainer: React.FC<TodosContainerProps> = ({
       )}
 
       {todos.map((todo: ITodo) => {
-        console.log(todos);
         if (categoryName === todo.category) {
           return <Todo key={todo.id} {...todo} categoryName={categoryName} />;
         }

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useGlobalContext } from "./context";
 
 const CategoryForm: React.FC = () => {
-  const { createCategory, categories } = useGlobalContext();
+  const { createCategory } = useGlobalContext();
   const [formData, setFormData] = React.useState<Category | {}>();
 
   const handleForm = (e: React.FormEvent<HTMLInputElement> | any): void => {

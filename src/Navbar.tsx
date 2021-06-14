@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { useGlobalContext } from "./context";
+import React from "react";
 
 const Navbar: React.FC = () => {
   return (

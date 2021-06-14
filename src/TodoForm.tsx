@@ -1,5 +1,4 @@
-import { type } from "os";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useGlobalContext } from "./context";
 
 type TodosFormProps = {
@@ -12,7 +11,7 @@ const TodoForm: React.FC<TodosFormProps> = ({
   categoryName,
   handleFormVisibility,
 }) => {
-  const { createTodo, todos } = useGlobalContext();
+  const { createTodo } = useGlobalContext();
   const [formData, setFormData] = React.useState<ITodo | {}>();
 
   const handleForm = (e: React.FormEvent<HTMLInputElement> | any): void => {

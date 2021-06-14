@@ -19,11 +19,6 @@ const AppProvider: React.FC = ({ children }) => {
     },
   ]);
 
-  //const setNewCategories = () => {
-  //  const allCategories = ["all", new Set(todos.map((todo) => todo.category))];
-  //  setCategories(allCategories);
-  //};
-
   const createCategory = (category: Category) => {
     const newCategory: Category = {
       id: Math.random(),
