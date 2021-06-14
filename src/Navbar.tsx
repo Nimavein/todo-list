@@ -3,7 +3,7 @@ import React from "react";
 const Navbar: React.FC = () => {
   return (
     <div>
-      <nav className="navbar">home</nav>
+      <nav className="navbar"></nav>
     </div>
   );
 };

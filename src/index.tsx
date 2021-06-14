@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./scss/index.css";
 import App from "./App";
 import { AppProvider } from "./context";
+import "../node_modules/font-awesome/css/font-awesome.min.css";
 
 ReactDOM.render(
   <React.StrictMode>

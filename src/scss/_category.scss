@@ -2,4 +2,32 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  margin: 10px 0 10px 0;
+
+  &:hover {
+    .category-delete-button {
+      visibility: visible;
+    }
+  }
+
+  .category-name {
+    padding-left: 10px;
+    margin: 10px 0 10px 0;
+    font-weight: 550;
+  }
+
+  .category-delete-button {
+    @include button-no-background;
+    visibility: hidden;
+  }
+  .show-more-button {
+    @include button-no-background;
+    padding: 0 10px 0 10px;
+    transition: all 0.3s ease-in-out;
+    &.open {
+      transform: rotate(180deg);
+    }
+  }
 }

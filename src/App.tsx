@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 
 function App() {
   return (
-    <div>
+    <div className="main-container">
       <Navbar />
       <Categories />
     </div>

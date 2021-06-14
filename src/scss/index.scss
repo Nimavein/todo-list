@@ -1,9 +1,12 @@
+@import "config";
+@import "main-container";
 @import "navbar";
 @import "todos-container";
 @import "form";
 @import "todo";
 @import "categories-container";
 @import "category";
+@import "category-form";
 body {
   padding: 0;
   margin: 0;

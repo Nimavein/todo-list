@@ -1,0 +1,21 @@
+.category-form-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5666666666666667);
+  .category-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    width: 60%;
+    height: 20%;
+    border-radius: 10px;
+  }
+}
