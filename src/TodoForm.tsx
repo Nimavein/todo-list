@@ -25,34 +25,61 @@ const TodoForm: React.FC<TodosFormProps> = ({
 
   const handleCreateTodo = (e: React.FormEvent, formData: ITodo | any) => {
     e.preventDefault();
-    //Passing category name to new Todo
-    //newTodo.category: categoryName;
     createTodo(formData);
     handleFormVisibility();
   };
   return (
-    <div>
+    <div className="todo-form-backdrop">
       <form
         className="todo-form"
         onSubmit={(e) => handleCreateTodo(e, formData)}
       >
-        <label>
-          Title:
-          <input onChange={handleForm} required type="text" id="title" />
-        </label>
-        <label>
-          Description:
-          <input onChange={handleForm} required type="text" id="description" />
-        </label>
-        <label>
-          Priority:
-          <select onChange={handleForm} required id="priority">
-            <option value="low">low</option>
-            <option value="medium">medium</option>
-            <option value="high">high</option>
-          </select>
-        </label>
-        <button>Add Todo</button>
+        <div className="todo-form-inputs">
+          <label className="title-label">
+            Title:
+            <input
+              className="title-input"
+              onChange={handleForm}
+              required
+              type="text"
+              id="title"
+            />
+          </label>
+          <label className="description-label">
+            Description:
+            <input
+              className="description-input"
+              onChange={handleForm}
+              required
+              type="text"
+              id="description"
+            />
+          </label>
+          <label className="priority-label">
+            Priority:
+            <select
+              className="priority-input"
+              onChange={handleForm}
+              required
+              id="priority"
+            >
+              <option value="low">low</option>
+              <option value="medium">medium</option>
+              <option value="high">high</option>
+            </select>
+          </label>
+        </div>
+
+        <div className="todo-form-buttons">
+          <button className="add-todo-form-button">Add</button>
+          <button
+            className="cancel-todo-button"
+            onClick={() => handleFormVisibility()}
+            type="button"
+          >
+            Cancel
+          </button>
+        </div>
       </form>
     </div>
   );

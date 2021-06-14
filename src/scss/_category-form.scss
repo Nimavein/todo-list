@@ -1,21 +1,56 @@
+.open-add-category-button {
+  background-color: $primary-color;
+  border: none;
+  color: white;
+  padding: 10px 50px 10px 50px;
+  margin: 20px 0 20px 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 .category-form-backdrop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.5666666666666667);
+  @include backdrop;
   .category-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     background: white;
-    width: 60%;
-    height: 20%;
+    width: 600px;
+    height: 25%;
     border-radius: 10px;
+    align-items: center;
+    .category-form-buttons {
+      margin-top: auto;
+      height: 30%;
+      width: 100%;
+    }
+    .add-category-button {
+      border-right: 1px solid $soft-grey !important;
+      color: $primary-color;
+    }
+    .add-category-button,
+    .cancel-category-button {
+      font-size: 1.2rem;
+      width: 50%;
+      height: 100%;
+      @include button-no-background;
+      border-top: 1px solid $soft-grey;
+    }
+    .category-form-label {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 80%;
+      padding: 10px;
+      font-size: 24px;
+      .category-form-input {
+        margin-top: 40px;
+        height: 40%;
+        border: none;
+        background-color: rgb(238, 238, 238);
+        font-size: 26px;
+        padding-left: 10px;
+        border-radius: 10px;
+      }
+    }
   }
 }

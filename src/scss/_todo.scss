@@ -1,4 +1,10 @@
-.todo-active {
+.todo {
+  display: flex;
+  text-align: center;
+}
+
+.todo-buttons {
+  margin-left: auto;
 }
 
 .todo-done {

@@ -34,20 +34,36 @@ const CategoryForm: React.FC = () => {
 
   return (
     <div>
-      <button onClick={() => handleFormVisibility()}>Add Category</button>
+      <button
+        className="open-add-category-button"
+        onClick={() => handleFormVisibility()}
+      >
+        Add Category
+      </button>
       {isCreateCategoryFormOpen === true ? (
         <div className="category-form-backdrop">
           <form
             className="category-form"
             onSubmit={(e) => handleCreateCategory(e, formData)}
           >
-            <label>
-              Name:
-              <input onChange={handleForm} required type="text" id="name" />
+            <label className="category-form-label">
+              Enter Category Name:
+              <input
+                className="category-form-input"
+                onChange={handleForm}
+                required
+                type="text"
+                id="name"
+                placeholder="name..."
+              />
             </label>
             <div className="category-form-buttons">
-              <button>Add</button>
-              <button onClick={() => handleFormVisibility()} type="button">
+              <button className="add-category-button">Add</button>
+              <button
+                className="cancel-category-button"
+                onClick={() => handleFormVisibility()}
+                type="button"
+              >
                 Cancel
               </button>
             </div>

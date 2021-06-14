@@ -27,8 +27,16 @@ const TodosContainer: React.FC<TodosContainerProps> = ({
   return (
     <div className="todos-container">
       <div>
-        <button onClick={() => handleFormVisibility()}>
-          {isFormOpen === false ? "Add task" : "X"}{" "}
+        {todos.map((todo: ITodo) => {
+          if (categoryName === todo.category) {
+            return <Todo key={todo.id} {...todo} categoryName={categoryName} />;
+          }
+        })}
+        <button
+          className="add-todo-button"
+          onClick={() => handleFormVisibility()}
+        >
+          Add task
         </button>
       </div>
       {isFormOpen === true && (
@@ -38,12 +46,6 @@ const TodosContainer: React.FC<TodosContainerProps> = ({
           handleFormVisibility={handleFormVisibility}
         />
       )}
-
-      {todos.map((todo: ITodo) => {
-        if (categoryName === todo.category) {
-          return <Todo key={todo.id} {...todo} categoryName={categoryName} />;
-        }
-      })}
     </div>
   );
 };

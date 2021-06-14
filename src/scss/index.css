@@ -22,8 +22,37 @@
 }
 
 .todos-container {
-  padding-top: 5vh;
-  padding-bottom: 5vh;
+  padding: 10px 20px 30px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.todos-container .add-todo-button {
+  background-color: #010177;
+  border: none;
+  color: white;
+  padding: 10px 0 10px 0;
+  width: 30%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.todo-form-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: rgba(0, 0, 0, 0.566667);
 }
 
 .todo-form {
@@ -34,7 +63,87 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 40%;
+  background: white;
+  width: 600px;
+  height: 50%;
+  border-radius: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo-form .todo-form-inputs {
+  padding-top: 20px;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+}
+
+.todo-form .todo-form-inputs .title-label,
+.todo-form .todo-form-inputs .description-label,
+.todo-form .todo-form-inputs .priority-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: left;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 22px;
+}
+
+.todo-form .todo-form-inputs .title-input,
+.todo-form .todo-form-inputs .description-input,
+.todo-form .todo-form-inputs .priority-input {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: none;
+  background-color: #eeeeee;
+  font-size: 22px;
+  border-radius: 10px;
+}
+
+.todo-form .todo-form-buttons {
+  margin-top: auto;
+  height: 20%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.todo-form .todo-form-buttons .add-todo-form-button,
+.todo-form .todo-form-buttons .cancel-todo-button {
+  width: 50%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-top: 1px solid #d6d6d6;
+  font-size: 1.2rem;
+}
+
+.todo-form .todo-form-buttons .add-todo-form-button {
+  border-right: 1px solid #d6d6d6 !important;
+  color: #010177;
+}
+
+.todo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+}
+
+.todo-buttons {
+  margin-left: auto;
 }
 
 .todo-done {
@@ -58,7 +167,7 @@
           align-items: center;
   background-color: white;
   border-radius: 20px;
-  margin: 10px 0 10px 0;
+  margin-bottom: 20px;
 }
 
 .category-title-container:hover .category-delete-button {
@@ -92,6 +201,16 @@
           transform: rotate(180deg);
 }
 
+.open-add-category-button {
+  background-color: #010177;
+  border: none;
+  color: white;
+  padding: 10px 50px 10px 50px;
+  margin: 20px 0 20px 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 .category-form-backdrop {
   position: absolute;
   top: 0;
@@ -118,15 +237,58 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background: white;
+  width: 600px;
+  height: 25%;
+  border-radius: 10px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background: white;
-  width: 60%;
-  height: 20%;
+}
+
+.category-form-backdrop .category-form .category-form-buttons {
+  margin-top: auto;
+  height: 30%;
+  width: 100%;
+}
+
+.category-form-backdrop .category-form .add-category-button {
+  border-right: 1px solid #d6d6d6 !important;
+  color: #010177;
+}
+
+.category-form-backdrop .category-form .add-category-button,
+.category-form-backdrop .category-form .cancel-category-button {
+  font-size: 1.2rem;
+  width: 50%;
+  height: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-top: 1px solid #d6d6d6;
+}
+
+.category-form-backdrop .category-form .category-form-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  width: 80%;
+  padding: 10px;
+  font-size: 24px;
+}
+
+.category-form-backdrop .category-form .category-form-label .category-form-input {
+  margin-top: 40px;
+  height: 40%;
+  border: none;
+  background-color: #eeeeee;
+  font-size: 26px;
+  padding-left: 10px;
   border-radius: 10px;
 }
 

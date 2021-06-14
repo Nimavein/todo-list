@@ -30,13 +30,16 @@ const Todo: React.FC<ITodoProps> = ({
   };
   const { deleteTodo, updateTodo } = useGlobalContext();
   return (
-    <div className={status === false ? "todo-active" : "todo-done"}>
+    <div className={status === false ? "todo todo-active" : " todo todo-done"}>
       <h1>{title}</h1>
       <h3>{description}</h3>
       <h3>{priority}</h3>
-      <button onClick={(e) => updateTodo(id)}>change status</button>
-      <button onClick={(e) => deleteTodo(id)}>delete</button>
-      <button onClick={(e) => handleEditVisibility()}>edit</button>
+      <div className="todo-buttons">
+        <button onClick={(e) => updateTodo(id)}>change status</button>
+        <button onClick={(e) => deleteTodo(id)}>delete</button>
+        <button onClick={(e) => handleEditVisibility()}>edit</button>
+      </div>
+
       {isEditOpen === false ? (
         ""
       ) : (
