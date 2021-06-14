@@ -1,4 +1,5 @@
 @import "config";
+@import "responsive";
 @import "main-container";
 @import "navbar";
 @import "todos-container";
@@ -15,7 +16,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: antiquewhite;
+
+  background: url("https://eljazeir.com/wp-content/uploads/2018/01/top-free-background-images.jpg")
+    no-repeat fixed center;
+  background-size: cover;
 }
 
 code {

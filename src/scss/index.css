@@ -1,3 +1,15 @@
+@media screen and (min-width: 768px) {
+  .categories-container {
+    width: 85% !important;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .categories-container {
+    width: 70% !important;
+  }
+}
+
 .main-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -28,7 +40,7 @@
 }
 
 .todos-container .add-todo-button {
-  background-color: #010177;
+  background-color: #030303;
   border: none;
   color: white;
   padding: 10px 0 10px 0;
@@ -132,7 +144,7 @@
 
 .todo-form .todo-form-buttons .add-todo-form-button {
   border-right: 1px solid #d6d6d6 !important;
-  color: #010177;
+  color: #030303;
 }
 
 .todo {
@@ -206,7 +218,7 @@
 
 .todo .change-todo-status-button {
   position: relative;
-  margin-left: 8px;
+  margin-left: 12px;
 }
 
 .todo .change-todo-status-button::before {
@@ -280,7 +292,7 @@
 }
 
 .open-add-category-button {
-  background-color: #010177;
+  background-color: #030303;
   border: none;
   color: white;
   padding: 10px 50px 10px 50px;
@@ -332,7 +344,7 @@
 
 .category-form-backdrop .category-form .add-category-button {
   border-right: 1px solid #d6d6d6 !important;
-  color: #010177;
+  color: #030303;
 }
 
 .category-form-backdrop .category-form .add-category-button,
@@ -376,7 +388,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: antiquewhite;
+  background: url("https://eljazeir.com/wp-content/uploads/2018/01/top-free-background-images.jpg") no-repeat fixed center;
+  background-size: cover;
 }
 
 code {

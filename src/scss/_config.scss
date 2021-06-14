@@ -1,4 +1,4 @@
-$primary-color: rgb(1, 1, 119);
+$primary-color: rgb(3, 3, 3);
 $soft-grey: rgb(214, 214, 214);
 
 @mixin button-no-background {
@@ -17,4 +17,20 @@ $soft-grey: rgb(214, 214, 214);
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.6);
+}
+
+@mixin media-md {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin media-lg {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+@mixin media-xl {
+  @media screen and (min-width: 1600px) {
+    @content;
+  }
 }
